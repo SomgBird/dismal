@@ -44,7 +44,5 @@ public class PlayerInputHandler : MonoBehaviour
     {
         DestinationPosition = hit.point;
         MoveInput = true;
-        //TODO: move to state machine
-        GetComponent<PlayerNavMeshController>().SetDestination(DestinationPosition);
     } 
 }

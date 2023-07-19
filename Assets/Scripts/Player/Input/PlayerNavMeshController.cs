@@ -6,22 +6,33 @@ using UnityEngine.AI;
 
 public class PlayerNavMeshController : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent PlayerNavMeshAgent { get; private set; }
 
-    [SerializeField] private Transform destinationTransform;
+    [SerializeField] private GameObject destinationMark;
     
     private void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        PlayerNavMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        navMeshAgent.destination = destinationTransform.position;
+        // PlayerNavMeshAgent.destination = destinationPoint;
     }
 
-    public void SetDestination(Vector3 position)
+    public void SetDestination(Vector3 destinationPoint)
     {
-        destinationTransform.transform.position = position;
-    } 
+        PlayerNavMeshAgent.destination = destinationPoint;
+        destinationMark.transform.position = destinationPoint;
+    }
+    
+    public void ShowDestinationMark()
+    {
+        destinationMark.SetActive(true);
+    }
+
+    public void ClearDestinationMark()
+    {
+        destinationMark.SetActive(false);
+    }
 }

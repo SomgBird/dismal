@@ -262,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8293279451948880248, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8293279451948880248, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -303,6 +303,10 @@ PrefabInstance:
     - target: {fileID: 8293279451948880249, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
       propertyPath: m_Name
       value: Destination
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293279451948880249, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
@@ -610,24 +614,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2002308627 stripped
+--- !u!1 &1754754284 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1377976280183177150, guid: 89a87b8735d67884ca3b5afb68d66cbe, type: 3}
-  m_PrefabInstance: {fileID: 1377976280001261997}
+  m_CorrespondingSourceObject: {fileID: 8293279451948880249, guid: 0d3fa191a54d7da46a564d543459d18e, type: 3}
+  m_PrefabInstance: {fileID: 639194723}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2002308629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002308627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e621e9813181da40b1d974f3e919950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationTransform: {fileID: 639194724}
 --- !u!1001 &2021837734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -859,6 +850,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 404874996}
+    - target: {fileID: 8823324155256854221, guid: 89a87b8735d67884ca3b5afb68d66cbe, type: 3}
+      propertyPath: destinationMark
+      value: 
+      objectReference: {fileID: 1754754284}
     - target: {fileID: 8823324155256854221, guid: 89a87b8735d67884ca3b5afb68d66cbe, type: 3}
       propertyPath: destinationTransform
       value: 
