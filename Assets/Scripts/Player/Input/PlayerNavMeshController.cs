@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerNavMesh : MonoBehaviour
+public class PlayerNavMeshController : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
 
@@ -19,4 +19,9 @@ public class PlayerNavMesh : MonoBehaviour
     {
         navMeshAgent.destination = destinationTransform.position;
     }
+
+    public void SetDestination(Vector3 position)
+    {
+        destinationTransform.transform.position = position;
+    } 
 }
