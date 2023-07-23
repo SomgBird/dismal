@@ -7,6 +7,19 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public bool MoveInput { get; private set; }
+    public bool InteractionScheduled { get; private set; }
+    private bool interactInput;
+    public bool InteractInput
+    {
+        get
+        {
+            bool i = interactInput;
+            interactInput = false;
+            return i;
+
+        }
+        private set => interactInput = value;
+    }
     
     public Vector3 DestinationPosition  { get; set; }
 
@@ -25,9 +38,10 @@ public class PlayerInputHandler : MonoBehaviour
                 switch (hit.collider.tag)
                 {
                     case "Walkable":
-                        SetMovementTask(hit);
+                        SetMovement(hit);
                         break;
                     case "Interactive":
+                        SetInteraction(hit);
                         break;
                 }
             }
@@ -36,13 +50,28 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             MoveInput = false;
+            InteractInput = false;
         }
     }
 
 
-    private void SetMovementTask(RaycastHit hit)
+    public void SetMovement(RaycastHit hit)
     {
         DestinationPosition = hit.point;
         MoveInput = true;
-    } 
+        ClearInteraction();
+    }
+
+    public void SetInteraction(RaycastHit hit)
+    {
+        InteractiveObject interactionTarget = hit.transform.GetComponentInParent<InteractiveObject>();
+        DestinationPosition = interactionTarget.InteractionPosition;
+        InteractInput = true;
+        InteractionScheduled = true;
+    }
+
+    public void ClearInteraction()
+    {
+        InteractionScheduled = false;
+    }
 }

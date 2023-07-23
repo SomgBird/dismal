@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349da6ec71e46514aa8fe47c209952b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 160594dad33ecd946b4f3da7dd586ced, type: 2}
 --- !u!114 &8823324155256854221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e621e9813181da40b1d974f3e919950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTransform: {fileID: 0}
+  destinationMark: {fileID: 0}
 --- !u!114 &129940624139845197
 MonoBehaviour:
   m_ObjectHideFlags: 0

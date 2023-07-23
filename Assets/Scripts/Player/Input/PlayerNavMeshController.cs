@@ -6,13 +6,13 @@ using UnityEngine.AI;
 
 public class PlayerNavMeshController : MonoBehaviour
 {
-    public NavMeshAgent PlayerNavMeshAgent { get; private set; }
+    public NavMeshAgent NavMeshAgent { get; private set; }
 
     [SerializeField] private GameObject destinationMark;
     
     private void Awake()
     {
-        PlayerNavMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -22,7 +22,7 @@ public class PlayerNavMeshController : MonoBehaviour
 
     public void SetDestination(Vector3 destinationPoint)
     {
-        PlayerNavMeshAgent.destination = destinationPoint;
+        NavMeshAgent.SetDestination(destinationPoint);
         destinationMark.transform.position = destinationPoint;
     }
     

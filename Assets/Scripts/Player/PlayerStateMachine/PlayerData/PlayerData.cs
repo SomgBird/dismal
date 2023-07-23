@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject
 {
-
+    public float interactiveDistance = 0.5f;
 }

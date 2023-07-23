@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkingState WalkingState { get; private set; }
+    public PlayerInteractionState InteractionState { get; private set; }
 
     #endregion
     
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         
         IdleState = new PlayerIdleState(this, StateMachine, playerData);
         WalkingState = new PlayerWalkingState(this, StateMachine, playerData);
+        InteractionState = new PlayerInteractionState(this, StateMachine, playerData);
     }
 
     void Start()

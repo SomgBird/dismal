@@ -24,7 +24,7 @@ public class PlayerWalkingState : FreeControlState
     {
         base.LogicUpdate();
         
-        if (player.NavMeshController.PlayerNavMeshAgent.remainingDistance < 0.01)
+        if (player.NavMeshController.NavMeshAgent.remainingDistance < 0.01 && !player.NavMeshController.NavMeshAgent.pathPending)
         {
             stateMachine.ChangeState(player.IdleState);
         }

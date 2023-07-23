@@ -27,31 +27,27 @@ public class FreeControlState : PlayerState
         base.LogicUpdate();
         
         moveInput = player.InputHandler.MoveInput;
-        // interactInput = player.InputHandler.InteractInput;
-        //
-        // if (player.InputHandler.InteractionScheduled)
-        // {
-        //     if (Vector3.Distance(player.InputHandler.DestinationPosition, player.transform.position) <
-        //         playerData.interactiveDistance)
-        //     {
-        //         stateMachine.ChangeState(player.InteractState);
-        //         return;
-        //     }
-        // }
+        interactInput = player.InputHandler.InteractInput;
+        
+        if (player.InputHandler.InteractionScheduled)
+        {
+            if (Vector3.Distance(player.InputHandler.DestinationPosition, player.transform.position) < playerData.interactiveDistance)
+            {
+                stateMachine.ChangeState(player.InteractionState);
+                player.InputHandler.ClearInteraction();
+                return;
+            }
+        }        
+        
+        if (moveInput || interactInput)
+        {
+            player.NavMeshController.ClearDestinationMark();
+            player.NavMeshController.SetDestination(player.InputHandler.DestinationPosition);
+        }
                 
         if (moveInput)
         {
             player.NavMeshController.ShowDestinationMark();
-        }
-
-        if (interactInput)
-        {
-            player.NavMeshController.ClearDestinationMark();
-        }
-
-        if (moveInput || interactInput)
-        {
-            player.NavMeshController.SetDestination(player.InputHandler.DestinationPosition);
         }
     }
 
