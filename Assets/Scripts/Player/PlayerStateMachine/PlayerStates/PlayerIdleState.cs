@@ -23,7 +23,7 @@ public class PlayerIdleState : FreeControlState
     {
         base.LogicUpdate();
         
-        if(moveInput)
+        if(moveInput || interactInput)
             stateMachine.ChangeState(player.WalkingState);
     }
 
