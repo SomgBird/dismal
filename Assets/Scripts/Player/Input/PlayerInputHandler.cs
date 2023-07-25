@@ -22,6 +22,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     
     public Vector3 DestinationPosition  { get; set; }
+    public InteractiveObject InteractionTarget { get; private set; }
 
     private Vector2 mousePosition;
 
@@ -64,8 +65,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void SetInteraction(RaycastHit hit)
     {
-        InteractiveObject interactionTarget = hit.transform.GetComponentInParent<InteractiveObject>();
-        DestinationPosition = interactionTarget.InteractionPosition;
+        InteractionTarget = hit.transform.GetComponentInParent<InteractiveObject>();
+        DestinationPosition = InteractionTarget.InteractionPosition;
         InteractInput = true;
         InteractionScheduled = true;
     }
@@ -73,5 +74,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void ClearInteraction()
     {
         InteractionScheduled = false;
+        InteractionTarget = null;
+        
     }
 }

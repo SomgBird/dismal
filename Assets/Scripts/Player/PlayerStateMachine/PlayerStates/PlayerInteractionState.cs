@@ -1,13 +1,7 @@
-﻿
-
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInteractionState : NoControlState
 {
-    public delegate void Interaction();
-    public event Interaction playerInteracted;
-    
     public PlayerInteractionState(Player player, PlayerStateMachine stateMachine, PlayerData playerData) : base(player, stateMachine, playerData)
     {
     }
@@ -23,14 +17,14 @@ public class PlayerInteractionState : NoControlState
     {
         base.Exit();
         
-        playerInteracted?.Invoke();
+        player.InputHandler.ClearInteraction();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         
-        // TODO: perform interaction
+        player.InputHandler.InteractionTarget.PerformInteraction(player);
         stateMachine.ChangeState(player.IdleState);
     }
 

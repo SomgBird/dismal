@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class InteractiveComponent : MonoBehaviour
 {
-    public virtual void PerformInteraction()
+    public virtual void PerformInteraction(Player player)
     {
         
     }

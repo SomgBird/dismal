@@ -24,6 +24,16 @@ public class PlayerWalkingState : FreeControlState
     {
         base.LogicUpdate();
         
+                
+        if (player.InputHandler.InteractionScheduled)
+        {
+            if (Vector3.Distance(player.InputHandler.DestinationPosition, player.transform.position) < playerData.interactiveDistance)
+            {
+                stateMachine.ChangeState(player.InteractionState);
+                return;
+            }
+        }     
+        
         if (player.NavMeshController.NavMeshAgent.remainingDistance < 0.01 && !player.NavMeshController.NavMeshAgent.pathPending)
         {
             stateMachine.ChangeState(player.IdleState);

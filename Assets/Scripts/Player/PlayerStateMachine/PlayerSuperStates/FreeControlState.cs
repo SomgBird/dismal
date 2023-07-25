@@ -28,17 +28,7 @@ public class FreeControlState : PlayerState
         
         moveInput = player.InputHandler.MoveInput;
         interactInput = player.InputHandler.InteractInput;
-        
-        if (player.InputHandler.InteractionScheduled)
-        {
-            if (Vector3.Distance(player.InputHandler.DestinationPosition, player.transform.position) < playerData.interactiveDistance)
-            {
-                stateMachine.ChangeState(player.InteractionState);
-                player.InputHandler.ClearInteraction();
-                return;
-            }
-        }        
-        
+
         if (moveInput || interactInput)
         {
             player.NavMeshController.ClearDestinationMark();
