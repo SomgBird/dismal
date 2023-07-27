@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public PlayerNavMeshController NavMeshController { get; private set; }
     public PlayerInputHandler  InputHandler  { get; private set; }
     
+    public InventorySystem InventorySystem { get; private set; }
+    
     #endregion
     
     #region UnityCallbacks
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     {
         NavMeshController = GetComponent<PlayerNavMeshController>();
         InputHandler = GetComponent<PlayerInputHandler>();
+        InventorySystem = GetComponent<InventorySystem>();
         
         StateMachine.Initialize(IdleState);
     }

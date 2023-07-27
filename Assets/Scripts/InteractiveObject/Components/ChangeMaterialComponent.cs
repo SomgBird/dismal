@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeMaterial : InteractiveComponent
+public class ChangeMaterialComponent : InteractiveComponent
 {
     [SerializeField] private Material newMaterial;
     [SerializeField] private GameObject target;
