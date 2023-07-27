@@ -14,14 +14,31 @@ public class InventoryItem
         Data = data;
         AddToStack();
     }
+    
+    public InventoryItem(InventoryItemStackData stackData)
+    {
+        Data = stackData.referenceData;
+        StackSize = stackData.amount;
+    }
 
     public void AddToStack()
     {
         StackSize++;
     }
+    
+    public void AddToStack(int amount)
+    {
+        StackSize += amount;
+    }
 
+    
     public void RemoveFromStack()
     {
         StackSize--;
+    }
+    
+    public void RemoveFromStack(int amount)
+    {
+        StackSize -= amount;
     }
 }

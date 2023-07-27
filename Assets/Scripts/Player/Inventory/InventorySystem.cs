@@ -19,48 +19,35 @@ public class InventorySystem : MonoBehaviour
     public InventoryItem Get(InventoryItemData referenceData) 
         => itemDictionary.TryGetValue(referenceData, out InventoryItem value) ? value : null;
 
-
-    public void Add(InventoryItemData referenceData)
+    
+    public void Add(InventoryItemStackData stackData)
     {
-        if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
+        if (itemDictionary.TryGetValue(stackData.referenceData, out InventoryItem value))
         {
-            value.AddToStack();
+            value.AddToStack(stackData.amount);
         }
         else
         {
-            InventoryItem newItem = new(referenceData);
+            InventoryItem newItem = new(stackData.referenceData);
             ItemList.Add(newItem);
-            itemDictionary.Add(referenceData, newItem);
+            itemDictionary.Add(stackData.referenceData, newItem);
         }
     }
 
-    public void Add(InventoryItemStackData stackData)
-    {
-        for (int i = 0; i < stackData.amount; i++)
-        {
-            Add(stackData.referenceData);
-        }
-    }
-
-    public void Remove(InventoryItemData referenceData)
-    {
-        if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
-        {
-            value.RemoveFromStack();
-
-            if (value.StackSize == 0)
-            {
-                ItemList.Remove(value);
-                itemDictionary.Remove(referenceData);
-            }
-        }
-    }
     
     public void Remove(InventoryItemStackData stackData)
     {
-        for (int i = 0; i < stackData.amount; i++)
+        if (itemDictionary.TryGetValue(stackData.referenceData, out InventoryItem value))
         {
-            Remove(stackData.referenceData);
+            if (value.StackSize - stackData.amount < 0)
+                throw new IndexOutOfRangeException("You are trying to remove more items than you have!");
+            value.RemoveFromStack(stackData.amount);
+            
+            if (value.StackSize == 0)
+            {
+                ItemList.Remove(value);
+                itemDictionary.Remove(stackData.referenceData);
+            }
         }
     }
 
