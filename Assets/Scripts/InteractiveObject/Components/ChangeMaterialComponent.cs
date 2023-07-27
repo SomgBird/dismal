@@ -7,10 +7,14 @@ public class ChangeMaterialComponent : InteractiveComponent
     [SerializeField] private Material newMaterial;
     [SerializeField] private GameObject target;
     
-    public override void PerformInteraction(Player player)
+    public override bool PerformInteraction(Player player)
     {
-        base.PerformInteraction(player);
+        UpdateMaterial();
+        return true;
+    }
 
+    private void UpdateMaterial()
+    {
         target.GetComponent<MeshRenderer>().material = newMaterial;
     }
 }

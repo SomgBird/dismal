@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
@@ -33,6 +34,14 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
+    public void Add(InventoryItemStackData stackData)
+    {
+        for (int i = 0; i < stackData.amount; i++)
+        {
+            Add(stackData.referenceData);
+        }
+    }
+
     public void Remove(InventoryItemData referenceData)
     {
         if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
@@ -46,4 +55,16 @@ public class InventorySystem : MonoBehaviour
             }
         }
     }
+    
+    public void Remove(InventoryItemStackData stackData)
+    {
+        for (int i = 0; i < stackData.amount; i++)
+        {
+            Remove(stackData.referenceData);
+        }
+    }
+
+    public bool MeetsRequirements(IEnumerable<InventoryRequirement> requirements)
+        => requirements.All(requirement => requirement.HasRequirement(this));
+    
 }

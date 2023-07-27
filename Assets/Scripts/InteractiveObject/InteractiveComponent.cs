@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class InteractiveComponent : MonoBehaviour
 {
-    public virtual void PerformInteraction(Player player)
+    public virtual bool PerformInteraction(Player player)
     {
-        
+        return true;
     }
 }

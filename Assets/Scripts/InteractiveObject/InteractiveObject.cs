@@ -28,7 +28,13 @@ public class InteractiveObject : MonoBehaviour
     public void PerformInteraction(Player player)
     {
         foreach (InteractiveComponent component in components)
-            component.PerformInteraction(player);
+        {
+            if (!component.PerformInteraction(player))
+            {
+                Debug.Log("Cannot continue interaction!");
+                break;
+            }
+        }
     }
 
 
