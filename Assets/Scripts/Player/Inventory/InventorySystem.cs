@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    public delegate void InventoryUpdate();
+    public static event InventoryUpdate InventoryUpdated;
+    
     private Dictionary<InventoryItemData, InventoryItem> itemDictionary;
     public List<InventoryItem> ItemList { get; private set; }
 
@@ -32,6 +35,8 @@ public class InventorySystem : MonoBehaviour
             ItemList.Add(newItem);
             itemDictionary.Add(stackData.referenceData, newItem);
         }
+        
+        InventoryUpdated?.Invoke();
     }
 
     
@@ -49,6 +54,8 @@ public class InventorySystem : MonoBehaviour
                 itemDictionary.Remove(stackData.referenceData);
             }
         }
+        
+        InventoryUpdated?.Invoke();
     }
 
     public bool MeetsRequirements(IEnumerable<InventoryRequirement> requirements)
