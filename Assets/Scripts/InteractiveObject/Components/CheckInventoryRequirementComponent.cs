@@ -17,5 +17,4 @@ public class CheckInventoryRequirementComponent : InteractiveComponent
         Debug.Log("Does not meet requirements!");
         return false;
     }
-    
 }
