@@ -83,6 +83,11 @@ public class InputManager : Singleton<InputManager>
             SubmitPressed = false;
         } 
     }
+    
+    public void RegisterSubmitPressed() 
+    {
+        SubmitPressed = false;
+    }
 
 
     public void SetMovement(RaycastHit hit)

@@ -25,7 +25,11 @@ public class PlayerInteractionState : NoControlState
         base.LogicUpdate();
         
         InputManager.Instance.InteractionTarget.PerformInteraction(player);
-        stateMachine.ChangeState(player.IdleState);
+        
+        if (DialogueManager.Instance.DialogueIsPlaying)
+            stateMachine.ChangeState(player.DialogueState);
+        else
+            stateMachine.ChangeState(player.IdleState);
     }
 
     public override void PhysicsUpdate()

@@ -10,6 +10,7 @@ public class PlayerDialogueState : NoControlState
 
     public override void Enter()
     {
+        Debug.Log("dialogue");
         base.Enter();
     }
 
@@ -22,7 +23,8 @@ public class PlayerDialogueState : NoControlState
     {
         base.LogicUpdate();
         
-        
+        if (!DialogueManager.Instance.DialogueIsPlaying)
+            stateMachine.ChangeState(player.IdleState);
     }
 
     public override void PhysicsUpdate()

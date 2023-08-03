@@ -30,8 +30,10 @@ public class DialogueManager : Singleton<DialogueManager>
             return;
         }
 
-        if (InputManager.Instance.SubmitPressed)
+        if (currentStory.currentChoices.Count == 0 &&
+            InputManager.Instance.SubmitPressed)
         {
+            InputManager.Instance.RegisterSubmitPressed();
             ContinueStory();
         }
     }

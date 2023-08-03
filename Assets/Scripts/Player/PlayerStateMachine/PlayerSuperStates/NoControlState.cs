@@ -22,9 +22,6 @@ public class NoControlState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        if (DialogueManager.Instance.DialogueIsPlaying)
-            stateMachine.ChangeState(player.DialogueState);
     }
 
     public override void PhysicsUpdate()
