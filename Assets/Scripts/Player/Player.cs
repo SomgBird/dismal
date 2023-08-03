@@ -14,14 +14,12 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkingState WalkingState { get; private set; }
     public PlayerInteractionState InteractionState { get; private set; }
+    public PlayerDialogueState DialogueState { get; private set; }
 
     #endregion
     
     #region Components
 
-    public PlayerNavMeshController NavMeshController { get; private set; }
-    public PlayerInputHandler  InputHandler  { get; private set; }
-    
     public InventorySystem InventorySystem { get; private set; }
     
     #endregion
@@ -35,12 +33,11 @@ public class Player : MonoBehaviour
         IdleState = new PlayerIdleState(this, StateMachine, playerData);
         WalkingState = new PlayerWalkingState(this, StateMachine, playerData);
         InteractionState = new PlayerInteractionState(this, StateMachine, playerData);
+        DialogueState = new PlayerDialogueState(this, StateMachine, playerData);
     }
 
     void Start()
     {
-        NavMeshController = GetComponent<PlayerNavMeshController>();
-        InputHandler = GetComponent<PlayerInputHandler>();
         InventorySystem = GetComponent<InventorySystem>();
         
         StateMachine.Initialize(IdleState);

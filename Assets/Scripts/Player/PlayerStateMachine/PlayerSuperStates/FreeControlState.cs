@@ -26,19 +26,22 @@ public class FreeControlState : PlayerState
     {
         base.LogicUpdate();
         
-        moveInput = player.InputHandler.MoveInput;
-        interactInput = player.InputHandler.InteractInput;
+        moveInput = InputManager.Instance.MoveInput;
+        interactInput = InputManager.Instance.InteractInput;
 
         if (moveInput || interactInput)
         {
-            player.NavMeshController.ClearDestinationMark();
-            player.NavMeshController.SetDestination(player.InputHandler.DestinationPosition);
+            NavMeshManager.Instance.ClearDestinationMark();
+            NavMeshManager.Instance.SetDestination(InputManager.Instance.DestinationPosition);
         }
                 
         if (moveInput)
         {
-            player.NavMeshController.ShowDestinationMark();
+            NavMeshManager.Instance.ShowDestinationMark();
         }
+        
+        if (DialogueManager.Instance.DialogueIsPlaying)
+            stateMachine.ChangeState(player.DialogueState);
     }
 
     public override void PhysicsUpdate()

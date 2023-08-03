@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PlayerInputHandler : MonoBehaviour
+public class InputManager : Singleton<InputManager>
 {
     public bool MoveInput { get; private set; }
     public bool InteractionScheduled { get; private set; }
@@ -21,6 +21,8 @@ public class PlayerInputHandler : MonoBehaviour
         }
         private set => interactInput = value;
     }
+
+    public bool SubmitPressed { get; private set; }
     
     public Vector3 DestinationPosition  { get; set; }
     public InteractiveObject InteractionTarget { get; private set; }
@@ -29,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private bool isMouseOverUI;
 
-
+    
     public void Update()
     {
         isMouseOverUI = EventSystem.current.IsPointerOverGameObject();
@@ -67,6 +69,19 @@ public class PlayerInputHandler : MonoBehaviour
             MoveInput = false;
             InteractInput = false;
         }
+    }
+    
+    
+    public void OnSubmitPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SubmitPressed = true;
+        }
+        else if (context.canceled)
+        {
+            SubmitPressed = false;
+        } 
     }
 
 

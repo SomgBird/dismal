@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoControlState : PlayerState
+public class PlayerDialogueState : NoControlState
 {
-
-    public NoControlState(Player player, PlayerStateMachine stateMachine, PlayerData playerData) : base(player, stateMachine, playerData)
+    public PlayerDialogueState(Player player, PlayerStateMachine stateMachine, PlayerData playerData) : base(player, stateMachine, playerData)
     {
     }
 
@@ -23,8 +22,7 @@ public class NoControlState : PlayerState
     {
         base.LogicUpdate();
         
-        if (DialogueManager.Instance.DialogueIsPlaying)
-            stateMachine.ChangeState(player.DialogueState);
+        
     }
 
     public override void PhysicsUpdate()

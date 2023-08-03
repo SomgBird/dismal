@@ -17,7 +17,7 @@ public class PlayerWalkingState : FreeControlState
     public override void Exit()
     {
         base.Exit();
-        player.NavMeshController.ClearDestinationMark();
+        NavMeshManager.Instance.ClearDestinationMark();
     }
 
     public override void LogicUpdate()
@@ -25,16 +25,16 @@ public class PlayerWalkingState : FreeControlState
         base.LogicUpdate();
         
                 
-        if (player.InputHandler.InteractionScheduled)
+        if (InputManager.Instance.InteractionScheduled)
         {
-            if (Vector3.Distance(player.InputHandler.DestinationPosition, player.transform.position) < playerData.interactiveDistance)
+            if (Vector3.Distance(InputManager.Instance.DestinationPosition, player.transform.position) < playerData.interactiveDistance)
             {
                 stateMachine.ChangeState(player.InteractionState);
                 return;
             }
         }     
         
-        if (player.NavMeshController.NavMeshAgent.remainingDistance < 0.01 && !player.NavMeshController.NavMeshAgent.pathPending)
+        if (NavMeshManager.Instance.NavMeshAgent.remainingDistance < 0.01 && !NavMeshManager.Instance.NavMeshAgent.pathPending)
         {
             stateMachine.ChangeState(player.IdleState);
         }

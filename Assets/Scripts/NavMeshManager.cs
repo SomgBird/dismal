@@ -3,18 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
-public class PlayerNavMeshController : MonoBehaviour
+public class NavMeshManager : Singleton<NavMeshManager>
 {
-    public NavMeshAgent NavMeshAgent { get; private set; }
-
+    [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private GameObject destinationMark;
     
-    private void Awake()
-    {
-        NavMeshAgent = GetComponent<NavMeshAgent>();
-    }
-
+    public NavMeshAgent NavMeshAgent => navMeshAgent;
+    
     private void Update()
     {
         // PlayerNavMeshAgent.destination = destinationPoint;

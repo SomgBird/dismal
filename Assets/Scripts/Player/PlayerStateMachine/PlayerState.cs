@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerState
 {
     protected Player player;
-
     protected PlayerStateMachine stateMachine;
-
     protected PlayerData playerData;
 
     public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData)

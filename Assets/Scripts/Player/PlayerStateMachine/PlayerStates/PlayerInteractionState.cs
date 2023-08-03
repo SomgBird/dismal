@@ -10,21 +10,21 @@ public class PlayerInteractionState : NoControlState
     {
         base.Enter();
         Debug.Log("interaction");
-        player.NavMeshController.NavMeshAgent.ResetPath();
+        NavMeshManager.Instance.NavMeshAgent.ResetPath();
     }
 
     public override void Exit()
     {
         base.Exit();
         
-        player.InputHandler.ClearInteraction();
+        InputManager.Instance.ClearInteraction();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         
-        player.InputHandler.InteractionTarget.PerformInteraction(player);
+        InputManager.Instance.InteractionTarget.PerformInteraction(player);
         stateMachine.ChangeState(player.IdleState);
     }
 
