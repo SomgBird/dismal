@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -26,9 +27,19 @@ public class PlayerInputHandler : MonoBehaviour
 
     private Vector2 mousePosition;
 
+    private bool isMouseOverUI;
+
+
+    public void Update()
+    {
+        isMouseOverUI = EventSystem.current.IsPointerOverGameObject();
+    }
 
     public void OnActionInput(InputAction.CallbackContext context)
     {
+        if (isMouseOverUI)
+            return;
+        
         if (context.started)
         {
             mousePosition = Mouse.current.position.ReadValue();
@@ -43,6 +54,9 @@ public class PlayerInputHandler : MonoBehaviour
                         break;
                     case "Interactive":
                         SetInteraction(hit);
+                        break;
+                    default:
+                        // TODO: play a sound effect?
                         break;
                 }
             }
