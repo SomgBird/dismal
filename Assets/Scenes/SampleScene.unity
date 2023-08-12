@@ -2960,13 +2960,13 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: d0981a6d25439614e941464bac98809e, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 7859861104232573041, guid: d0981a6d25439614e941464bac98809e, type: 3}
+  m_PointAction: {fileID: -5143421571089870359, guid: d0981a6d25439614e941464bac98809e, type: 3}
+  m_MoveAction: {fileID: 0}
   m_SubmitAction: {fileID: 3428363264754780136, guid: d0981a6d25439614e941464bac98809e, type: 3}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: -5522350499519457920, guid: d0981a6d25439614e941464bac98809e, type: 3}
+  m_MiddleClickAction: {fileID: 1965048240941374235, guid: d0981a6d25439614e941464bac98809e, type: 3}
+  m_RightClickAction: {fileID: 8742487422057738959, guid: d0981a6d25439614e941464bac98809e, type: 3}
   m_ScrollWheelAction: {fileID: 0}
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
