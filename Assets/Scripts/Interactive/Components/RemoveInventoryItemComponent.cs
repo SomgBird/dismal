@@ -5,8 +5,9 @@ using UnityEngine;
 public class RemoveInventoryItemComponent : InteractiveComponent
 {
     public List<InventoryItemStackData> itemsToRemove;
+    [SerializeField] private Player player;
 
-    public override bool PerformInteraction(Player player)
+    public override bool PerformInteraction()
     {
         RemoveItemFromInventory(player.InventorySystem);
         return true;

@@ -106,7 +106,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7159053350871164820}
-  - component: {fileID: 7159053350871164843}
+  - component: {fileID: 4092131539428303766}
+  - component: {fileID: 9096212895019788124}
   m_Layer: 0
   m_Name: CheckInventory
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7159053350871164843
+--- !u!114 &4092131539428303766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,10 +142,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7159053350871164842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a225eca0bf9c8546809e1424277e50f, type: 3}
+  m_Script: {fileID: 11500000, guid: 69589cae5b6300041a2b05702a337964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   componentContainer: {fileID: 7159053352110369704}
+  eventTrigger: {fileID: 9096212895019788124}
+--- !u!114 &9096212895019788124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159053350871164842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d753d390fd74194a9942298aa6d2f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   interactionPosition: {fileID: 7159053351357812320}
 --- !u!1 &7159053351357812320
 GameObject:
@@ -223,8 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requirements:
-  - referenceData: {fileID: 11400000, guid: c12f3600ee227d846b1fc25cf32d9bfe, type: 2}
-    amount: 1
+  - requiredItems:
+      referenceData: {fileID: 0}
+      amount: 0
+  player: {fileID: 0}
 --- !u!114 &7159053352110369705
 MonoBehaviour:
   m_ObjectHideFlags: 0

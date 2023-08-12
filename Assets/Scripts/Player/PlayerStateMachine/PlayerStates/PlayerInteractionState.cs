@@ -24,7 +24,7 @@ public class PlayerInteractionState : NoControlState
     {
         base.LogicUpdate();
         
-        InputManager.Instance.InteractionTarget.PerformInteraction(player);
+        InputManager.Instance.InteractionTarget.PerformInteraction();
         
         if (DialogueManager.Instance.DialogueIsPlaying)
             stateMachine.ChangeState(player.DialogueState);

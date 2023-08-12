@@ -2302,6 +2302,7 @@ MonoBehaviour:
   itemsToRemove:
   - referenceData: {fileID: 11400000, guid: c12f3600ee227d846b1fc25cf32d9bfe, type: 2}
     amount: 1
+  player: {fileID: 1608107007}
 --- !u!1 &1356065176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2475,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 674914791}
   destinationMark: {fileID: 1754754284}
+--- !u!114 &1608107007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1833300219216290994, guid: 89a87b8735d67884ca3b5afb68d66cbe, type: 3}
+  m_PrefabInstance: {fileID: 1377976280001261997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349da6ec71e46514aa8fe47c209952b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1618635972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,6 +3379,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3428928943951965860, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1608107007}
+    - target: {fileID: 3428928943951965860, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
+      propertyPath: itemsToAdd.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428928943951965860, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
       propertyPath: itemsToAdd.Array.data[0].amount
       value: 1
       objectReference: {fileID: 0}
@@ -3638,6 +3658,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 647278853395605710, guid: c1ee385a4bfdc2849a4d7dae9e601c09, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1608107007}
     - target: {fileID: 647278853395605710, guid: c1ee385a4bfdc2849a4d7dae9e601c09, type: 3}
       propertyPath: requirements.Array.data[0].requiredItems.amount
       value: 1

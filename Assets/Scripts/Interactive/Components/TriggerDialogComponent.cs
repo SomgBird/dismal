@@ -6,7 +6,7 @@ public class TriggerDialogComponent : InteractiveComponent
 {
     [SerializeField] private TextAsset dialogTextAsset;
     
-    public override bool PerformInteraction(Player player)
+    public override bool PerformInteraction()
     {
         DialogueManager.Instance.EnterDialogueMode(dialogTextAsset);
         return true;

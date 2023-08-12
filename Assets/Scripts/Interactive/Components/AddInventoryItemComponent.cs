@@ -6,8 +6,9 @@ using UnityEngine.Serialization;
 public class AddInventoryItemComponent : InteractiveComponent
 {
     public List<InventoryItemStackData> itemsToAdd;
+    [SerializeField] private Player player;
 
-    public override bool PerformInteraction(Player player)
+    public override bool PerformInteraction()
     {
         AddToInventory(player.InventorySystem);
         return true;

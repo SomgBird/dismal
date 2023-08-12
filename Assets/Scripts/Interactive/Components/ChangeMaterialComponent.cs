@@ -7,7 +7,7 @@ public class ChangeMaterialComponent : InteractiveComponent
     [SerializeField] private Material newMaterial;
     [SerializeField] private GameObject target;
     
-    public override bool PerformInteraction(Player player)
+    public override bool PerformInteraction()
     {
         UpdateMaterial();
         return true;

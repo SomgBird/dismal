@@ -5,8 +5,9 @@ using UnityEngine;
 public class CheckInventoryRequirementComponent : InteractiveComponent
 {
     public List<InventoryRequirement> requirements;
+    [SerializeField] private Player player;
 
-    public override bool PerformInteraction(Player player)
+    public override bool PerformInteraction()
     {
         if (player.InventorySystem.MeetsRequirements(requirements))
         {

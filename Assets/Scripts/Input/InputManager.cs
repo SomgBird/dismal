@@ -25,7 +25,7 @@ public class InputManager : Singleton<InputManager>
     public bool SubmitPressed { get; private set; }
     
     public Vector3 DestinationPosition  { get; set; }
-    public InteractiveObject InteractionTarget { get; private set; }
+    public PlayerClickInteraction InteractionTarget { get; private set; }
 
     private Vector2 mousePosition;
 
@@ -99,7 +99,7 @@ public class InputManager : Singleton<InputManager>
 
     public void SetInteraction(RaycastHit hit)
     {
-        InteractionTarget = hit.transform.GetComponentInParent<InteractiveObject>();
+        InteractionTarget = hit.transform.GetComponentInParent<PlayerClickInteraction>();
         DestinationPosition = InteractionTarget.InteractionPosition;
         InteractInput = true;
         InteractionScheduled = true;

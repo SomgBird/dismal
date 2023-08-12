@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class InteractiveComponent : MonoBehaviour
 {
-    public virtual bool PerformInteraction(Player player)
+    public virtual bool PerformInteraction()
     {
         return true;
     }
