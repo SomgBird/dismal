@@ -2,9 +2,9 @@
 
 === main ===
 Choose something!
-    +[Choice1]
+    +[Choice №1]
         -> chosen("1")
-    +[Choice2]
+    +[Choice №2]
         -> chosen("2")
         
 === chosen(ch) ===

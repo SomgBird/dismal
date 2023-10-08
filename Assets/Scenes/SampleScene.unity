@@ -1045,6 +1045,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &706491974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220089092282026800, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
+  m_PrefabInstance: {fileID: 851618445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804738206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2344722024791069887, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
+      propertyPath: interactionPositionMarker
+      value: 
+      objectReference: {fileID: 706491974}
     - target: {fileID: 5220089091252725976, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
       propertyPath: m_Name
       value: TriggerDialog
@@ -1438,6 +1447,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948356125}
   m_CullTransparentMesh: 1
+--- !u!1 &980445870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7159053351357812320, guid: c1ee385a4bfdc2849a4d7dae9e601c09, type: 3}
+  m_PrefabInstance: {fileID: 7159053350861569204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1000832589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2127,11 @@ MonoBehaviour:
   inventorySystem: {fileID: 335138428}
   itemContent: {fileID: 1000832590}
   inventoryItemView: {fileID: 420595503576056609, guid: 44a2472ef8209bf498a3260ab8767fca, type: 3}
+--- !u!1 &1236141871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220089092282026800, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
+  m_PrefabInstance: {fileID: 5220089091616537405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1266640179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,8 +2492,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e621e9813181da40b1d974f3e919950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 674914791}
+  navMeshAgentInstance: {fileID: 674914791}
   destinationMark: {fileID: 1754754284}
+--- !u!1 &1553371571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3428928944989948262, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
+  m_PrefabInstance: {fileID: 3428928944986109858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1568693116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8790095366656966955, guid: f935a51249adda648a614bdeb80a82e3, type: 3}
+  m_PrefabInstance: {fileID: 8790095365258410039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1608107007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1833300219216290994, guid: 89a87b8735d67884ca3b5afb68d66cbe, type: 3}
@@ -2908,6 +2937,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d057bf03-4205-4002-98f0-5060489e60cf
     m_ActionName: Player/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ecf281af-3e70-4dce-bfd5-ffb15f866fe3
+    m_ActionName: Player/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a1be41b3-1430-4d96-8c74-0a8fe54601ae
+    m_ActionName: Player/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f34a47b-11e0-485b-ae2a-23bf66f69b08
+    m_ActionName: Player/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba4cb266-63a9-4b83-804b-2f17b6bd5223
+    m_ActionName: Player/MiddleClick[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3446,6 +3491,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.92
       objectReference: {fileID: 0}
+    - target: {fileID: 7152441381756771245, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
+      propertyPath: interactionPositionMarker
+      value: 
+      objectReference: {fileID: 1553371571}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c65b1d3f743c1479ad6131d02a8398, type: 3}
 --- !u!1001 &4393503266465152426
@@ -3524,6 +3573,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2344722024791069887, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
+      propertyPath: interactionPositionMarker
+      value: 
+      objectReference: {fileID: 1236141871}
     - target: {fileID: 5220089091252725976, guid: 5c74a3169848bcb4e9b91a93c0a4936d, type: 3}
       propertyPath: m_Name
       value: InteractiveDummy
@@ -3722,6 +3775,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.29
       objectReference: {fileID: 0}
+    - target: {fileID: 9096212895019788124, guid: c1ee385a4bfdc2849a4d7dae9e601c09, type: 3}
+      propertyPath: interactionPositionMarker
+      value: 
+      objectReference: {fileID: 980445870}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ee385a4bfdc2849a4d7dae9e601c09, type: 3}
 --- !u!1001 &8790095365258410039
@@ -3731,6 +3788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3715913855306354245, guid: f935a51249adda648a614bdeb80a82e3, type: 3}
+      propertyPath: interactionPositionMarker
+      value: 
+      objectReference: {fileID: 1568693116}
     - target: {fileID: 8790095364840666066, guid: f935a51249adda648a614bdeb80a82e3, type: 3}
       propertyPath: m_RootOrder
       value: 7

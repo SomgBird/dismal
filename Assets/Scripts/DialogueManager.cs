@@ -112,5 +112,6 @@ public class DialogueManager : Singleton<DialogueManager>
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
