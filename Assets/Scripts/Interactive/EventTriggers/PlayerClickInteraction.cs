@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerClickInteraction : InteractiveEventTrigger
 {
-    [SerializeField] private GameObject interactionPosition;
-    public Vector3 InteractionPosition => interactionPosition.transform.position;
+    [SerializeField] private GameObject interactionPositionMarker;
+    public Vector3 InteractionPosition => interactionPositionMarker.transform.position;
 
     public void PerformInteraction()
     {

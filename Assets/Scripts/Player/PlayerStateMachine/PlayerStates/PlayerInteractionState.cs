@@ -10,7 +10,7 @@ public class PlayerInteractionState : NoControlState
     {
         base.Enter();
         Debug.Log("interaction");
-        NavMeshManager.Instance.NavMeshAgent.ResetPath();
+        NavMeshManager.Instance.NavMeshAgentInstance.ResetPath();
     }
 
     public override void Exit()

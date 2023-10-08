@@ -9,17 +9,18 @@ public class InputManager : Singleton<InputManager>
 {
     public bool MoveInput { get; private set; }
     public bool InteractionScheduled { get; private set; }
-    private bool interactInput;
+    
+    private bool _interactInput;
     public bool InteractInput
     {
         get
         {
-            bool i = interactInput;
-            interactInput = false;
+            bool i = _interactInput;
+            _interactInput = false;
             return i;
 
         }
-        private set => interactInput = value;
+        private set => _interactInput = value;
     }
 
     public bool SubmitPressed { get; private set; }

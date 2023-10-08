@@ -34,7 +34,7 @@ public class PlayerWalkingState : FreeControlState
             }
         }     
         
-        if (NavMeshManager.Instance.NavMeshAgent.remainingDistance < 0.01 && !NavMeshManager.Instance.NavMeshAgent.pathPending)
+        if (NavMeshManager.Instance.NavMeshAgentInstance.remainingDistance < 0.01 && !NavMeshManager.Instance.NavMeshAgentInstance.pathPending)
         {
             stateMachine.ChangeState(player.IdleState);
         }

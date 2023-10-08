@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 
 public class NavMeshManager : Singleton<NavMeshManager>
 {
-    [SerializeField] private NavMeshAgent navMeshAgent;
+    [SerializeField] private NavMeshAgent navMeshAgentInstance;
     [SerializeField] private GameObject destinationMark;
     
-    public NavMeshAgent NavMeshAgent => navMeshAgent;
+    public NavMeshAgent NavMeshAgentInstance => navMeshAgentInstance;
     
     private void Update()
     {
@@ -19,7 +19,7 @@ public class NavMeshManager : Singleton<NavMeshManager>
 
     public void SetDestination(Vector3 destinationPoint)
     {
-        NavMeshAgent.SetDestination(destinationPoint);
+        NavMeshAgentInstance.SetDestination(destinationPoint);
         destinationMark.transform.position = destinationPoint;
     }
     
