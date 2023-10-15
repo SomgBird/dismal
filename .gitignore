@@ -11,7 +11,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/[Uu]ser[Ss]ettings/
+/[Pp]rojectSettings/
+/[Uu]serSettings/
 
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
